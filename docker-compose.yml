@@ -6,9 +6,10 @@ services:
     container_name: mysql
     restart: always
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=user_service
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=admin
     volumes: 
@@ -24,6 +25,15 @@ services:
     volumes:
       - redis-data:/data
 
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    restart: always
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mysql
+      - redis
 
 volumes:
   mysql-data:

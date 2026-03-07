@@ -4,7 +4,7 @@ const helmet = require("helmet");
 
 const errorMiddleware = require("./middleware/error.middleware");
 const requestLogger = require("./middleware/logger.middleware");
-const { PORT } = require("./config/config");
+const { PORT } = require("./config/appconfig");
 const corsMiddleware = require("./middleware/cors.middleware");
 const logger = require("./utils/logger.utils");
 
@@ -29,6 +29,7 @@ function startSever() {
       logger.info(`Server is running on port ${PORT}`);
     });
   } catch (error) {
+    logger.error("Failed to start server", error);
     process.exit(1);
   }
 }

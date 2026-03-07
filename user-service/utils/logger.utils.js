@@ -1,5 +1,5 @@
 const winston = require("winston");
-const { LOG_LEVEL } = require("../config/config");
+const { LOG_LEVEL } = require("../config/appconfig");
 
 const logger = winston.createLogger({
   level: LOG_LEVEL,

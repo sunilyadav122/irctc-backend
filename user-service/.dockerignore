@@ -1,0 +1,17 @@
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.env
+.DS_Store
+.git
+.gitignore
+coverage/
+logs/
+tmp/
+dist/
+build/
+test/
+.vscode/
+.idea/
+*.swp

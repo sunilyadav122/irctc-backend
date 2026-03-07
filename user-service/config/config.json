@@ -2,22 +2,21 @@
   "development": {
     "username": "admin",
     "password": "admin",
-    "database": "user-service",
+    "database": "user_service",
     "host": "mysql",
-    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
     "username": "admin",
     "password": "admin",
-    "database": "user-service",
+    "database": "user_service",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "admin",
     "password": "admin",
-    "database": "user-service",
+    "database": "user_service",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

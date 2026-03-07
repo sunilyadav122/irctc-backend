@@ -1,4 +1,4 @@
-const { ALLOWED_ORIGIN } = require("../config/config");
+const { ALLOWED_ORIGIN } = require("../config/appconfig");
 const cors = require("cors");
 
 const corsMiddleware = cors({
