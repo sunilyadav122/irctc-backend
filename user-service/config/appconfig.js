@@ -10,4 +10,9 @@ module.exports = {
     process.env.REDIS_URL ||
     `redis://${process.env.REDIS_HOST || "localhost"}:${process.env.REDIS_PORT || 6379}`,
   OTP_TTL: process.env.OTP_TTL || 300,
+  SMTP_HOST: process.env.SMTP_HOST,
+  SMTP_USER: process.env.SMTP_USER,
+  SMTP_PORT: process.env.SMTP_PORT,
+  SMTP_PASS: process.env.SMTP_PASS,
+  EMAIL_FROM: process.env.EMAIL_FROM,
 };
