@@ -3,14 +3,14 @@ const logger = require("../utils/logger.utils");
 const config = require("./appconfig");
 
 class EmailClient {
-  static intance;
+  static instance;
   static isReady = false;
 
   constructor() {}
 
   static getInstance() {
-    if (!EmailClient.intance) {
-      EmailClient.intance = nodemailer.createTransport({
+    if (!EmailClient.instance) {
+      EmailClient.instance = nodemailer.createTransport({
         host: config.SMTP_HOST,
         port: config.SMTP_PORT,
         secure: config.ENVIRONMENT === "production",
@@ -23,12 +23,12 @@ class EmailClient {
       EmailClient.verifyConnection();
     }
 
-    return EmailClient.intance;
+    return EmailClient.instance;
   }
 
   static async verifyConnection() {
     try {
-      const transporter = EmailClient.intance;
+      const transporter = EmailClient.instance;
       await transporter.verify();
       EmailClient.isReady = true;
       logger.info("Email transporter is ready");
